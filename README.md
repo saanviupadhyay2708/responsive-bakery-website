@@ -92,11 +92,7 @@ Tested and working on:
 - Safari (latest)
 - Edge (latest)
 
-## Credits
 
-- Icons: [RemixIcon](https://remixicon.com/)
-- Animation Library: [ScrollReveal](https://scrollrevealjs.org/)
-- Fonts: Google Fonts (Poppins, Barlow Condensed)
 
 ## License
 
