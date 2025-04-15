@@ -1,0 +1,1194 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
+
+
+/*==================== CSS VARIABLES ====================*/
+:root {
+  --header-height: 3.5rem;
+
+  /* Colors */
+  --first-color: #3a1d1d;
+  --first-color-alt: #240c0c;
+  --title-color: #36100b;
+  --text-color: #4b3a3a;
+  --text-color-light: #7a6666;
+  --white-color: #ffffff;
+  --body-color: #fffaf3;
+  --container-color: #fff9f0;
+  --accent-color: #ffdf3c;
+  --purple-color: #7209b7;
+  --peach-color: #ff9b71;
+  --blue-color: #78d0e6;
+  --yellow-color: #ffdf3c;
+
+  /* Typography */
+  --body-font: 'Poppins', sans-serif;
+  --title-font: 'Barlow Condensed', sans-serif;
+  --biggest-font-size: 3.5rem;
+  --h1-font-size: 2.5rem;
+  --h2-font-size: 2rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.813rem;
+
+  /* Font Weights */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+  --font-extra-bold: 800;
+
+  /* Z-index */
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* Increase typographic sizes on larger screens */
+@media screen and (min-width: 1024px) {
+  :root {
+    --body-font: 'Poppins', sans-serif;
+    --title-font: 'Barlow Condensed', sans-serif;
+    --biggest-font-size: 5rem;
+    --h1-font-size: 3rem;
+    --h2-font-size: 2.5rem;
+    --h3-font-size: 1.5rem;
+  }
+}
+
+/*==================== BASE STYLES ====================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--title-font);
+  font-weight: var(--font-bold);
+  color: var(--title-color);
+  text-transform: uppercase;
+}
+
+p {
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*==================== UTILITY CLASSES ====================*/
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding: 4.5rem 0 3.5rem;
+}
+
+.section__title {
+  text-align: center;
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-extra-bold);
+  margin-bottom: 2.5rem;
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: var(--title-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: var(--font-bold);
+  font-family: var(--title-font);
+  text-transform: uppercase;
+  transition: transform 0.3s, box-shadow 0.4s;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(255, 223, 60, 0.25);
+}
+
+/*==================== PROMO BANNER ====================*/
+.promo-banner {
+  background-color: var(--purple-color);
+  color: var(--white-color);
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.promo-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/*==================== HEADER & NAV ====================*/
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: var(--body-color);
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.4s;
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+
+.nav__logo h1 {
+  font-size: 1.75rem;
+  font-weight: var(--font-extra-bold);
+  color: var(--title-color);
+}
+
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav__list {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav__link {
+  font-size: var(--small-font-size);
+  text-transform: uppercase;
+  font-weight: var(--font-semi-bold);
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav__link:hover {
+  color: var(--first-color);
+}
+
+.nav__link::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+
+.nav__link:hover::after {
+  width: 100%;
+}
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav__cart i {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.nav__toggle,
+.nav__close {
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* Mobile menu */
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--body-color);
+    padding: 3.5rem 1.5rem;
+    transition: top 0.4s;
+  }
+  .nav__toggle {
+    display: block;
+  }
+  .nav__close {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+  }
+}
+
+/*==================== HOME / HERO SECTION ====================*/
+.home {
+  margin-top: var(--header-height);
+  position: relative;
+  overflow: hidden;
+}
+
+.home__container {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .home__container {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+.home__data {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.home__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--accent-color);
+  color: var(--title-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: var(--smaller-font-size);
+  text-transform: uppercase;
+  font-weight: var(--font-bold);
+}
+
+.home__title {
+  font-size: var(--biggest-font-size);
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.home__subtitle {
+  font-size: var(--h3-font-size);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: var(--font-semi-bold);
+}
+
+.home__tag-fresh {
+  background-color: var(--blue-color);
+  color: var(--title-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: var(--smaller-font-size);
+  text-transform: uppercase;
+}
+
+.home__description {
+  color: var(--text-color-light);
+  margin-bottom: 2rem;
+}
+
+.home__buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.home__link {
+  font-weight: var(--font-semi-bold);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.3s;
+}
+
+.home__link:hover {
+  gap: 0.75rem;
+}
+
+.home__image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  max-width: 300px;    /* ↓ was 500px, lower this to shrink */
+  justify-self: center;
+}
+
+
+.home__img {
+  width: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+/*==================== PRODUCTS SECTION ====================*/
+.products {
+  margin-top: 4rem;
+}
+
+.products__container {
+  display: flex;            /* Switch from grid to flex */
+  gap: 2rem;
+  padding: 1.5rem;
+  background-color: var(--container-color);
+  border-radius: 1rem;
+
+  /* 
+    If you want them to wrap on smaller screens (recommended),
+    add flex-wrap. If you prefer a single row with horizontal 
+    scroll on small screens, remove flex-wrap. 
+  */
+  flex-wrap: wrap;
+  justify-content: center;  /* Center them or use 'space-between', 'space-around', etc. */
+  align-items: center;
+}
+
+
+.products__card {
+  background-color: var(--white-color);
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1rem;
+  transition: transform 0.4s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  min-width: 200px;
+}
+
+.products__card:hover {
+  transform: translateY(-0.5rem);
+}
+
+.products__img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin: 0 auto 1rem;
+}
+
+.products__title {
+  font-size: var(--small-font-size);
+  font-weight: var(--font-bold);
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+/* 1) Base wrapper: fixed size + pastel background via modifiers */
+.products__img-wrapper {
+  width: 165px;              /* total wrapper width */
+  height: 165px;             /* total wrapper height */
+  padding: 8px;              /* inner pastel “border” */
+  box-sizing: border-box;    /* include padding in width/height */
+  border-radius: 0.5rem;
+  margin: 0 auto 1rem;       /* center + gap below */
+}
+
+/* 2) Modifier classes for each pastel */
+.products__img-wrapper--pink   { background-color: #fa839f; }
+.products__img-wrapper--blue   { background-color: #68a8f1; }
+.products__img-wrapper--purple { background-color: #f3e1ff; }
+
+/* 3) Make the image fill the wrapper entirely */
+.products__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* crop & fill */
+  border-radius: 0.5rem;     /* match wrapper inner corner */
+}
+
+
+
+
+/*==================== ABOUT SECTION ====================*/
+.about {
+  background-color: #ecfbed;   /* same pink as cookie‑featured */
+  padding: 4rem 1.5rem;         /* add vertical breathing room */
+}
+
+.about__container {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .about__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.about__data {
+  text-align: center;
+}
+
+.about__description {
+  color: var(--text-color-light);
+  margin-bottom: 1rem;
+}
+
+.about__img {
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+
+/*==================== FEATURES SECTION ====================*/
+.features {
+  margin-top: 4rem;
+}
+
+.features__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.features__content {
+  display: grid;
+  gap: 2rem;
+}
+
+/* Quote block */
+.features__quote {
+  background-color: var(--container-color);
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  font-style: italic;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.features__quote blockquote {
+  quotes: "“" "”";
+}
+
+.features__quote p {
+  margin-bottom: 0.5rem;
+}
+
+/* Review Section */
+.features__review {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--container-color);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.features__review-text h3 {
+  font-size: var(--h3-font-size);
+  text-transform: uppercase;
+  font-weight: var(--font-bold);
+}
+
+.features__review-rating {
+  text-align: center;
+}
+
+.features__rating-number {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-bold);
+  margin-bottom: 0.5rem;
+}
+
+.features__rating-stars i {
+  color: var(--accent-color);
+  font-size: 1.25rem;
+}
+
+.features__rating-count {
+  font-size: var(--smaller-font-size);
+}
+
+.features__categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.features__category {
+  background-color: var(--container-color);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: var(--smaller-font-size);
+  text-transform: uppercase;
+  font-weight: var(--font-semi-bold);
+  transition: background-color 0.3s;
+}
+
+.features__category:hover {
+  background-color: var(--accent-color);
+}
+.features__item-header {
+  /* Pink background behind the cookie */
+  background-color: #fdd6dd; /* pick the exact pink from your design */
+  text-align: center;
+  padding: 0.5 rem;
+  border-radius: 1rem; /* optional, to round corners */
+  /* If you want the container to fill the entire width, remove 'display: inline-block' */
+}
+
+.features__img {
+  max-width: 220px; /* smaller size for the cookie */
+  width: 100%;      /* ensures it scales within that max-width */
+  height: auto;
+  margin: 0 auto;   /* centers image horizontally if 'display: block' */
+  display: block;   /* ensure the margin auto works for centering */
+}
+
+
+/*==================== FEATURED SECTION ====================*/
+.featured {
+  margin-top: 4rem;
+}
+
+.featured__container {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .featured__container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.featured__image img {
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.featured__img--small {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+}
+
+
+.featured__data {
+  padding: 1rem;
+}
+
+.featured__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.featured__subtitle {
+  font-size: var(--h3-font-size);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.featured__product {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.featured__product-img {
+  width: 100px;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.featured__price {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-bold);
+  color: var(--first-color);
+}
+
+.featured__description {
+  margin-top: 1rem;
+  color: var(--text-color-light);
+}
+
+/*==================== COUNT SECTION ====================*/
+.count {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.count__content {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  justify-items: center;
+}
+
+.count__item {
+  background-color: var(--container-color);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  transition: transform 0.4s;
+}
+
+.count__item:hover {
+  transform: translateY(-0.5rem);
+}
+
+.count__number {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-bold);
+  margin-bottom: 0.5rem;
+}
+
+.count__title {
+  font-weight: var(--font-semi-bold);
+  text-transform: uppercase;
+}
+
+/*==================== FOOTER ====================*/
+.footer {
+  background-color: var(--first-color);
+  color: var(--white-color);
+  padding: 2rem 1.5rem;
+  margin-top: 3rem;
+}
+
+.footer__container {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer__logo {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-extra-bold);
+  margin-bottom: 0.5rem;
+}
+
+.footer__description {
+  font-size: var(--small-font-size);
+  line-height: 1.6;
+}
+
+.footer__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+}
+
+.footer__title {
+  font-size: var(--small-font-size);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.footer__links,
+.footer__social {
+  list-style: none;
+}
+
+.footer__link,
+.footer__social-link {
+  font-size: var(--small-font-size);
+  color: var(--white-color);
+  transition: color 0.3s;
+}
+
+.footer__link:hover,
+.footer__social-link:hover {
+  color: var(--accent-color);
+}
+
+.footer__privacy {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: var(--small-font-size);
+  margin-top: 1rem;
+}
+
+.footer__copy {
+  text-align: center;
+  font-size: var(--small-font-size);
+}
+
+/*==================== SCROLL UP BUTTON ====================*/
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  background-color: var(--accent-color);
+  color: var(--title-color);
+  padding: 0.5rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: none;
+  cursor: pointer;
+  z-index: var(--z-tooltip);
+  transition: transform 0.3s;
+}
+
+.scrollup:hover {
+  transform: translateY(-3px);
+}
+/* =========== HOME SECTION: TWO-COLUMN LAYOUT (Desktop) =========== */
+@media screen and (min-width: 1024px) {
+  .home__container {
+    display: grid;
+    grid-template-columns: 3fr 2fr; /* Text occupies ~60%, image ~40% */
+    align-items: center;
+    gap: 2rem; /* Adjust gap between text and image as needed */
+  }
+  
+  /* Ensures the image container does not overflow */
+  .home__image {
+    overflow: hidden;
+    /* Optional: Set a max-height if required:
+       max-height: 400px; */
+  }
+  
+  .home__img {
+    width: 100%;
+    height: auto;
+    border-radius: 2rem;
+    object-fit: cover; /* Ensures the image fills its container without distorting */
+    display: block;
+  }
+}
+
+/* =========== HOME SECTION: SINGLE-COLUMN LAYOUT (Mobile) =========== */
+@media screen and (max-width: 1023px) {
+  .home__container {
+    grid-template-columns: 1fr;
+  }
+}
+/* ==================== COMBINED COOKIE FEATURED SECTION ==================== */
+
+.cookie-featured {
+  background-color: #fde7ec; /* Light pink; swap to #f0f7ff for light blue or #f3e1ff for light purple */
+  padding: 3rem 1.5rem;
+}
+
+.cookie-featured__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* —————————————————————————————
+   TOP ROW: images on left, text+rating on right
+   ————————————————————————————— */
+/* Ensure the image wrapper has enough room */
+.cookie-featured__image-wrapper {
+  position: relative;
+  width: 600px;  /* Adjust if needed */
+  height: 300px; /* Adjust if needed */
+  margin: 0 auto;
+}
+
+/* Base style for all images in this section */
+.cookie-featured__img {
+  position: absolute;
+  width: 160px;   /* Set a uniform width */
+  height: 220px;  /* Set a uniform height */
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Left image */
+.cookie-featured__img--left {
+  top: 20px;
+  left: 20px;  /* Note: using "20px" instead of "20" */
+  transform: rotate(-6deg);
+  z-index: 1;
+}
+
+/* Middle image */
+.cookie-featured__img--middle {
+  top: 10px;
+  left: 220px;  /* Pushed further right */
+  transform: rotate(0deg);
+  z-index: 2;
+}
+
+/* Right image */
+.cookie-featured__img--right {
+  top: 20px;
+  left: 420px;  /* Pushed even further right */
+  transform: rotate(6deg);
+  z-index: 3;
+}
+
+
+
+
+
+/* —————————————————————————————
+   RIGHT COLUMN: product text + rating
+   ————————————————————————————— */
+.cookie-featured__text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  align-items: flex-start;
+}
+
+/* product title / price / description */
+.cookie-featured__title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--title-color);
+}
+
+.cookie-featured__price {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--first-color);
+}
+
+.cookie-featured__desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+/* rating box sits directly under the description */
+.cookie-featured__review {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--container-color);
+  padding: 1rem 1.25rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  align-self: flex-start; /* hug the left edge of the text block */
+  margin-top: 0;          /* remove extra top space */
+}
+
+.cookie-featured__review-text h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 350;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.cookie-featured__rating-number {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--first-color);
+}
+
+.cookie-featured__rating-stars i {
+  color: var(--accent-color);
+  font-size: 1.25rem;
+}
+
+.cookie-featured__rating-count {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  color: var(--text-color-light);
+}
+
+/* —————————————————————————————
+   QUOTE BLOCK (below the top row)
+   ————————————————————————————— */
+.cookie-featured__quote blockquote {
+  background-color: #fff;
+  padding: 1rem;
+  border-left: 4px solid var(--first-color);
+  border-radius: 0.5rem;
+  font-style: italic;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  margin-top: 1rem; /* a little space from the row above */
+}
+
+.cookie-featured__quote blockquote p {
+  margin-bottom: 0.5rem;
+}
+
+/* —————————————————————————————
+   CATEGORIES (still below)
+   ————————————————————————————— */
+.cookie-featured__categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.cookie-featured__category {
+  background-color: var(--container-color);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.cookie-featured__category:hover {
+  background-color: var(--accent-color);
+}
+
+
+.delight {
+  background-color: #f5f5dc; /* Beige (customize as needed) */
+  padding: 4rem 1.5rem;
+}
+
+/* 2-column layout: images left, text right */
+.delight__container {
+  display: grid;
+  grid-template-columns: 2fr 3fr; 
+  gap: 2rem;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .delight__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+/* Overlapped Images Container */
+.delight__images {
+  position: relative;
+  width: 360px;  /* container width for the overlap */
+  height: 280px; /* container height; adjust as needed */
+  margin: 0 auto;
+}
+/* 1) Two‑column layout: images on left, text+rating on right */
+.cookie-featured__content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap; /* will wrap on narrow screens */
+}
+
+/* 2) Left column: fixed size for the 3-image overlap */
+.cookie-featured__left {
+  flex: 0 0 auto;
+}
+
+.cookie-featured__image-wrapper {
+  position: relative;
+  width: 500px;   /* room for three 160px-wide images + overlap */
+  height: 260px;  /* matches your 220px-tall images + small buffer */
+}
+
+/* Base image style */
+.cookie-featured__img {
+  position: absolute;
+  width: 160px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* Left‑most image */
+.cookie-featured__img--left {
+  top: 20px;
+  left:   0px;
+  transform: rotate(-6deg);
+  z-index: 1;
+}
+
+/* Middle image */
+.cookie-featured__img--middle {
+  top:   0px;
+  left: 180px;
+  transform: rotate(0deg);
+  z-index: 2;
+}
+
+/* Right‑most image */
+.cookie-featured__img--right {
+  top:  20px;
+  left: 360px;
+  transform: rotate(6deg);
+  z-index: 3;
+}
+
+/* 3) Right column: product details + rating */
+.cookie-featured__right {
+  flex: 1;                       /* fill remaining space */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 450px;              /* tweak to your taste */
+}
+
+/* your existing title/price/desc rules are fine */
+
+/* ensure the rating box hugs the left edge */
+.cookie-featured__review {
+  align-self: flex-start;
+  margin-top: 0;
+}
+
+/* optional: make sure quote sits below with some breathing room */
+.cookie-featured__quote {
+  margin-top: 1.5rem;
+}
+
+.delight__img {
+  position: absolute;
+  width: 180px; 
+  height: 200px; 
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Left image - adjust top & left to position it */
+/* Base style for all delight images */
+.delight__img {
+  width: 210px;      /* Increased width from 180px */
+  height: 240px;     /* Increased height from 200px */
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  position: absolute; /* necessary for overlapping */
+}
+
+/* Left image: moves a bit further down for more space */
+
+
+/* Right image: moved further down and to the right for more spacing */
+.delight__img--left {
+  top: -150px;
+  left: -100px;
+  transform: rotate(-8deg);
+  z-index: 3;
+}
+
+.delight__img--middle {
+  top: 50px;
+  left: 40px;
+  transform: rotate(3deg);
+  z-index: 2;
+}
+
+.delight__img--right {
+  top: 200px;
+  left: 180px;
+  transform: rotate(4deg);
+  z-index: 3;
+}
+
+
+/* Right Column: Text & Product */
+.delight__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Titles, subtitles, etc. (adjust fonts as per your theme) */
+.delight__title {
+  font-family: var(--title-font);
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-extra-bold);
+  text-transform: uppercase;
+  color: var(--title-color);
+}
+
+.delight__subtitle {
+  font-family: var(--title-font);
+  font-weight: var(--font-semi-bold);
+  text-transform: uppercase;
+  color: var(--text-color-light);
+  font-size: var(--normal-font-size);
+  margin-bottom: 0.5rem;
+}
+
+/* Product details area */
+.delight__product {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.delight__product-img {
+  width: 80px;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.delight__product-data h3 {
+  font-family: var(--title-font);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.delight__price {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-bold);
+  color: var(--first-color);
+}
+
+/* Description text */
+.delight__description {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  line-height: 1.6;
+  color: var(--text-color);
+  max-width: 450px;
+}

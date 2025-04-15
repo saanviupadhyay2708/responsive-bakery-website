@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+  <!-- Remix Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.7.0/remixicon.css"
+  />
+
+  <!-- Google Fonts: Chewy & Montserrat -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Chewy&family=Montserrat:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Link to External CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <title>YUMMY CRUMB BAKERY</title>
+</head>
+<body>
+  <!-- PROMO BANNER -->
+  <div class="promo-banner">
+    <div class="promo-container">
+      <p>15% Off on $100+ Purchase</p>
+      <p>Subscribe & Save 15%</p>
+      <p>10% Off on $200+ Purchase</p>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">
+        <h1>YUMMY CRUMBS BAKERY</h1>
+      </a>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#cake" class="nav__link">CAKE</a></li>
+          <li class="nav__item"><a href="#bakery" class="nav__link">BAKERY</a></li>
+          <li class="nav__item"><a href="#about" class="nav__link">ABOUT US</a></li>
+          <li class="nav__item"><a href="#cookies" class="nav__link">COOKIES</a></li>
+          <li class="nav__item"><a href="#contact" class="nav__link">CONTACT</a></li>
+        </ul>
+
+        <div class="nav__close" id="nav-close">
+          <i class="ri-close-line"></i>
+        </div>
+      </div>
+
+      <!-- Start Baking Button -->
+      <div class="nav__actions">
+        <a href="#" class="button">START BAKING</a>
+        <div class="nav__cart">
+          <i class="ri-shopping-bag-line"></i>
+        </div>
+      </div>
+
+      <!-- Toggle button for mobile -->
+      <div class="nav__toggle" id="nav-toggle">
+        <i class="ri-menu-line"></i>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+    <!-- HOME / HERO SECTION -->
+    <section class="home section" id="home">
+      <div class="home__container container grid">
+        <div class="home__data">
+          <div class="home__tag">
+            <span class="home__tag-icon"><i class="ri-fire-line"></i></span>
+            <span>TASTY</span>
+            <span class="home__tag-icon"><i class="ri-shopping-basket-2-line"></i></span>
+            <span>CRUNCHY</span>
+          </div>
+          <h1 class="home__title">BAKE THE COOKIES</h1>
+          <div class="home__subtitle">
+            PREMIUM BREAD AND COOKIES MADE FROM SCRATCH
+            <span class="home__tag-fresh">FRESH</span>
+          </div>
+          <p class="home__description">
+            We're literally obsessed with giving more of what you love!
+          </p>
+          <div class="home__buttons">
+            <a href="#" class="button">ORDER NOW</a>
+            <a href="#" class="home__link">
+              COOKING BLOG <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+        </div>
+        <div class="home__image">
+          <img src="assets/img/baguette_basket.jpg" alt="baguette basket" class="home__img">
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS SECTION -->
+    <section class="products section" id="products">
+      <div class="products__container container">
+        
+        <!-- CARD 1 -->
+        <div class="products__card">
+          <div class="products__img-wrapper products__img-wrapper--pink">
+            <img src="assets/img/bagel with seeds.jpg"
+                 alt="Bagel with seeds"
+                 class="products__img">
+          </div>
+          <h3 class="products__title">BAGEL WITH SEEDS</h3>
+        </div>
+    
+        <!-- CARD 2 -->
+        <div class="products__card">
+          <div class="products__img-wrapper products__img-wrapper--blue">
+            <img src="assets/img/slice of breadjpg.jpg"
+                 alt="Sliced piece bread"
+                 class="products__img">
+          </div>
+          <h3 class="products__title">SLICED PIECE BREAD</h3>
+        </div>
+    
+        <!-- CARD 3 -->
+        <div class="products__card">
+          <div class="products__img-wrapper products__img-wrapper--purple">
+            <img src="assets/img/cookie 1.jpg"
+                 alt="Cookies glucose"
+                 class="products__img">
+          </div>
+          <h3 class="products__title">COOKIES GLUCOSE</h3>
+        </div>
+    
+      </div>
+    </section>
+    
+
+    <!-- ABOUT SECTION -->
+    <section class="about section" id="about">
+      <div class="about__container container grid">
+        <div class="about__data">
+          <h2 class="section__title">WHY IS BAKING CONSIDERED AS ART FORM?</h2>
+          <p class="about__description">
+            Their experience plays a vital role in the way they work. Bakers use flavors and visual appeal to produce an edible art piece.
+          </p>
+          <a href="#" class="button">LEARN BAKING</a>
+        </div>
+        <div class="about__image">
+          <img src="assets/img/person baking 2.jpg" alt="Baker working" class="about__img">
+        </div>
+      </div>
+    </section>
+
+<!-- COMBINED COOKIE FEATURED SECTION -->
+ <!-- COOKIE FEATURED SECTION -->
+<section class="cookie-featured section" id="cookie-featured">
+   <div class="cookie-featured__inner container">
+     <div class="cookie-featured__content">
+       
+       <!-- LEFT COLUMN: Overlapping 3 Images -->
+       <div class="cookie-featured__left">
+         <div class="cookie-featured__image-wrapper">
+           <img src="assets/img/cookie_stack.jpg"
+                alt="Cookie Stack"
+                class="cookie-featured__img cookie-featured__img--left">
+           <img src="assets/img/cookie 1.jpg"
+                alt="Cookie Rows"
+                class="cookie-featured__img cookie-featured__img--middle">
+           <img src="assets/img/cookie 2.jpg"
+                alt="Stacked Cookies"
+                class="cookie-featured__img cookie-featured__img--right">
+         </div>
+       </div>
+       
+       <!-- RIGHT COLUMN: Product Text + Rating -->
+       <div class="cookie-featured__right">
+         <h3 class="cookie-featured__title">Taste the Real Wheat Baked Items.</h3>
+         <p class="cookie-featured__price">$16</p>
+         <p class="cookie-featured__desc">
+           Baking is a craft—and every cookie is a masterpiece.
+         </p>
+         <div class="cookie-featured__review">
+           <div class="cookie-featured__review-text">
+             <h3>WITH ENOUGH BUTTER, ANYTHING IS GOOD!</h3>
+           </div>
+           <div class="cookie-featured__review-rating">
+             <span class="cookie-featured__rating-number">3.73</span>
+             <div class="cookie-featured__rating-stars">
+               <i class="ri-star-fill"></i>
+               <i class="ri-star-fill"></i>
+               <i class="ri-star-fill"></i>
+               <i class="ri-star-half-fill"></i>
+               <i class="ri-star-line"></i>
+             </div>
+             <span class="cookie-featured__rating-count">Based on 1,920 reviews.</span>
+           </div>
+         </div>
+       </div>
+ 
+     </div>
+ 
+     <!-- Optional: quote or categories below -->
+     <div class="cookie-featured__quote">
+       <blockquote>
+         <p>"Baking is a craft in itself, and we bake these delicious and crumbly flavors bakery items."</p>
+         <cite>— Ashton Cooper</cite>
+       </blockquote>
+     </div>
+   </div>
+ </section>
+ 
+ 
+ 
+    <!-- DELIGHT SECTION -->
+<section class="delight section" id="delight">
+   <div class="delight__container container">
+     <!-- Overlapped Images on the Left -->
+     <div class="delight__images">
+       <img 
+         src="assets/img/baguette_basket.jpg" 
+         alt="Baked Goods Board 1"
+         class="delight__img delight__img--left"
+       >
+       <img 
+         src="assets/img/breads.jpg" 
+         alt="Baked Goods Board 2"
+         class="delight__img delight__img--middle"
+       >
+       <img 
+         src="assets/img/cookie 2.jpg" 
+         alt="Baked Goods Board 2"
+         class="delight__img delight__img--right"
+       >
+
+     </div>
+ 
+     <!-- Text & Featured Product on the Right -->
+     <div class="delight__content">
+       <h2 class="delight__title">YOUR ONLY DOSE OF DELIGHT</h2>
+       <p class="delight__subtitle">Featured Item -</p>
+ 
+       <!-- Re-added product details (name, price, etc.) -->
+       <div class="delight__product">
+         <div class="delight__product-data">
+           <h3>Bagel Buns</h3>
+           <p>Gluten free</p>
+           <span class="delight__price">$16</span>
+         </div>
+       </div>
+ 
+       <p class="delight__description">
+         All cookies should have a show-stopping German chocolate cake in their repertoire, 
+         and this is one of our favourites.
+       </p>
+     </div>
+   </div>
+ </section>
+ 
+ 
+ 
+
+    <!-- COUNT SECTION -->
+    <section class="count section" id="count">
+      <div class="count__container container">
+        <h2 class="section__title">PRODUCT WE BAKE HERE DAILY -</h2>
+        <div class="count__content">
+          <div class="count__item">
+            <span class="count__number">12</span>
+            <span class="count__title">COOKIES</span>
+          </div>
+          <div class="count__item">
+            <span class="count__number">27</span>
+            <span class="count__title">CAKE</span>
+          </div>
+          <div class="count__item">
+            <span class="count__number">8</span>
+            <span class="count__title">BRETZEL</span>
+          </div>
+          <div class="count__item">
+            <span class="count__number">23</span>
+            <span class="count__title">PASTRIES</span>
+          </div>
+          <div class="count__item">
+            <span class="count__number">21</span>
+            <span class="count__title">CROISSANT</span>
+          </div>
+          <div class="count__item">
+            <span class="count__number">13</span>
+            <span class="count__title">BAGEL</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__container container grid">
+      <div>
+        <a href="#" class="footer__logo">YUMMY CRUMBS BAKERY.</a>
+        <p class="footer__description">
+          Premium bread and cookies made from scratch.
+          <br>
+          We're literally obsessed with giving more of what you love!
+        </p>
+      </div>
+      <div class="footer__content">
+        <div>
+          <h3 class="footer__title">Company</h3>
+          <ul class="footer__links">
+            <li><a href="#" class="footer__link">About</a></li>
+            <li><a href="#" class="footer__link">Products</a></li>
+            <li><a href="#" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__title">Information</h3>
+          <ul class="footer__links">
+            <li><a href="#" class="footer__link">FAQ</a></li>
+            <li><a href="#" class="footer__link">Blog</a></li>
+            <li><a href="#" class="footer__link">Support</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__title">Follow Us</h3>
+          <ul class="footer__social">
+            <li>
+              <a href="#" class="footer__social-link">
+                <i class="ri-facebook-fill"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer__social-link">
+                <i class="ri-instagram-line"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer__social-link">
+                <i class="ri-twitter-x-line"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__info container">
+      <span class="footer__copy">
+        © 2025 YUMMY CRUMBS BAKERY. All rights reserved
+      </span>
+      <div class="footer__privacy">
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCROLL UP BUTTON -->
+  <a href="#" class="scrollup" id="scroll-up">
+    <i class="ri-arrow-up-line"></i>
+  </a>
+
+  <!-- SCROLLREVEAL (Optional) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>
+
+  <!-- MAIN JS (Your custom JS if any) -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
